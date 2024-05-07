@@ -1,0 +1,25 @@
+{
+  "name": "functional-extensions",
+  "version": "0.0.1",
+  "description": "Various functional extensions to JavaScript's collections.",
+  "main": "./dist/index.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Besendorfer/functional-extensions.git"
+  },
+  "author": "TJ Besendorfer",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Besendorfer/functional-extensions/issues"
+  },
+  "homepage": "https://github.com/Besendorfer/functional-extensions#readme",
+  "devDependencies": {
+    "@types/jest": "^29.5.12",
+    "jest": "^29.7.0",
+    "ts-jest": "^29.1.2",
+    "typescript": "^5.4.5"
+  }
+}
