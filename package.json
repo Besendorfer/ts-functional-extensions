@@ -1,7 +1,7 @@
 {
-  "name": "functional-extensions",
+  "name": "ts-functional-extensions",
   "version": "0.0.1",
-  "description": "Various functional extensions to JavaScript's collections.",
+  "description": "Various type-safe functional extensions to JavaScript's collections.",
   "main": "./dist/index.js",
   "module": "./dist/index.es.js",
   "types": "./dist/index.d.ts",
