@@ -1,1 +1,2 @@
+import './sum';
 import './tap';
