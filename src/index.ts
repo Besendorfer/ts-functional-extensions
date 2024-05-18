@@ -1,4 +1,5 @@
 import './any';
+import './none';
 import './pushSorted';
 import './sortBy';
 import './sum';
