@@ -62,4 +62,20 @@ describe('any', () => {
 
     const result = arr.any();
   });
+
+  it('should return true if any element in the array matches the provided predicate', () => {
+    const arr = [0, 1, 0];
+
+    const result = arr.any((x) => x === 1);
+
+    expect(result).toBe(true);
+  });
+
+  it('should return false if no element in the array matches the provided predicate', () => {
+    const arr = [0, 1, 0];
+
+    const result = arr.any((x) => x === 2);
+
+    expect(result).toBe(false);
+  });
 });
