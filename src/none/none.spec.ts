@@ -16,4 +16,20 @@ describe('none', () => {
 
     expect(result).toBe(false);
   });
+
+  it('should return true if all the elements in the array don\'t match the predicate', () => {
+    const arr = [0, 2, 4];
+
+    const result = arr.none(x => x % 2 === 1);
+
+    expect(result).toBe(true);
+  });
+
+  it('should return false if any of the elements in the array match the predicate', () => {
+    const arr = [0, 2, 3, 4];
+
+    const result = arr.none(x => x % 2 === 1);
+
+    expect(result).toBe(false);
+  });
 });
