@@ -11,6 +11,7 @@ Pull requests are always welcome and encouraged! Please feel free to make reques
 `npm install ts-functional-extensions`
 
 ```
-// In one of your .ts files (you really only need to add this in a single file in a build, as it should affect the prototype in all of your files directly connected to the build)
+// In one of your .ts files (you really only need to add this in a single file in a build,
+// as it should affect the prototype in all of your files directly connected to the build)
 import 'ts-functional-extensions';
 ```
