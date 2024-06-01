@@ -12,6 +12,8 @@ declare global {
  * `toSorted` is a method that allows you to sort an array, without mutating the array,
  * using a custom comparator function. It returns a new array with the sorted values.
  *
+ * TODO: Work on making this more performant.
+ *
  */
 
 if (!Array.prototype.toSorted) {

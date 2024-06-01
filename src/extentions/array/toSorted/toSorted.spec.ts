@@ -1,5 +1,5 @@
-import './index.js';
-import '../sum/sum.js';
+import '.';
+import '../sum/sum';
 
 describe('toSorted', () => {
   it('should sort the values in an array', () => {
