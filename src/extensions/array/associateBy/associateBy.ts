@@ -4,7 +4,7 @@ type RecordKey = string | number | symbol;
 
 declare global {
   interface Array<T> {
-    associateBy<T>(cb: (value: T) => RecordKey): Record<RecordKey, T>;
+    associateBy(cb: (value: T) => RecordKey): Record<RecordKey, T>;
   }
 }
 

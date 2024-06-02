@@ -4,7 +4,7 @@ type RecordKey = string | number | symbol;
 
 declare global {
   interface Array<T> {
-    groupBy<T>(cb: (value: T) => RecordKey): Record<RecordKey, T[]>;
+    groupBy(cb: (value: T) => RecordKey): Record<RecordKey, T[]>;
   }
 }
 
