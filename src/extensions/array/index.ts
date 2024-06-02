@@ -1,6 +1,7 @@
 import './any';
 import './associateBy';
 import './associateWith';
+import './groupBy';
 import './none';
 import './pushSorted';
 import './sum';
