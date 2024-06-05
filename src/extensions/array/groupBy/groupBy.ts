@@ -1,10 +1,8 @@
 export {};
 
-type RecordKey = string | number | symbol;
-
 declare global {
   interface Array<T> {
-    groupBy(cb: (value: T) => RecordKey): Record<RecordKey, T[]>;
+    groupBy(cb: (value: T) => PropertyKey): Record<PropertyKey, T[]>;
   }
 }
 
@@ -18,12 +16,12 @@ declare global {
 
 if (!Array.prototype.groupBy) {
   Object.defineProperty(Array.prototype, 'groupBy', {
-    value: function groupBy<T>(this: T[], cb: (value: T) => RecordKey): Record<RecordKey, T[]> {
+    value: function groupBy<T>(this: T[], cb: (value: T) => PropertyKey): Record<PropertyKey, T[]> {
       return this.reduce((acc, curr) => {
         acc[cb(curr)] = acc[cb(curr)] || [];
         acc[cb(curr)].push(curr);
         return acc;
-      }, {} as Record<RecordKey, T[]>);
+      }, {} as Record<PropertyKey, T[]>);
     }
   });
 }

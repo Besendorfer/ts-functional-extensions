@@ -1,10 +1,8 @@
 export {}
 
-type RecordKey = string | number | symbol;
-
 declare global {
   interface Array<T> {
-    associateWith<K>(cb: (value: RecordKey) => K): Record<RecordKey, K>;
+    associateWith<K>(cb: (value: PropertyKey) => K): Record<PropertyKey, K>;
   }
 }
 
@@ -18,11 +16,11 @@ declare global {
 
 if (!Array.prototype.associateWith) {
   Object.defineProperty(Array.prototype, 'associateWith', {
-    value: function associateWith<K>(this: RecordKey[], cb: (value: RecordKey) => K): Record<RecordKey, K> {
+    value: function associateWith<K>(this: PropertyKey[], cb: (value: PropertyKey) => K): Record<PropertyKey, K> {
       return this.reduce((acc, curr) => {
         acc[curr] = cb(curr);
         return acc;
-      }, {} as Record<RecordKey, K>);
+      }, {} as Record<PropertyKey, K>);
     }
   });
 }
