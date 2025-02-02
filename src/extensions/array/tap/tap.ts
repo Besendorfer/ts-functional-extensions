@@ -1,4 +1,4 @@
-export {}
+export {};
 
 declare global {
   interface Array<T> {
@@ -20,8 +20,8 @@ declare global {
 if (!Array.prototype.tap) {
   Object.defineProperty(Array.prototype, 'tap', {
     value: function tap<T>(this: T[], cb: (it: T) => void): T[] {
-      this.forEach(it => cb(it));
+      this.forEach((it) => cb(it));
       return this;
-    }
+    },
   });
 }

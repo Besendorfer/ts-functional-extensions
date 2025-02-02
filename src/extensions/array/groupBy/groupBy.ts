@@ -16,12 +16,18 @@ declare global {
 
 if (!Array.prototype.groupBy) {
   Object.defineProperty(Array.prototype, 'groupBy', {
-    value: function groupBy<T>(this: T[], cb: (value: T) => PropertyKey): Record<PropertyKey, T[]> {
-      return this.reduce((acc, curr) => {
-        acc[cb(curr)] = acc[cb(curr)] || [];
-        acc[cb(curr)].push(curr);
-        return acc;
-      }, {} as Record<PropertyKey, T[]>);
-    }
+    value: function groupBy<T>(
+      this: T[],
+      cb: (value: T) => PropertyKey,
+    ): Record<PropertyKey, T[]> {
+      return this.reduce(
+        (acc, curr) => {
+          acc[cb(curr)] = acc[cb(curr)] || [];
+          acc[cb(curr)].push(curr);
+          return acc;
+        },
+        {} as Record<PropertyKey, T[]>,
+      );
+    },
   });
 }

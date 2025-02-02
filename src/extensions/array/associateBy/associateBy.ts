@@ -1,4 +1,4 @@
-export {}
+export {};
 
 declare global {
   interface Array<T> {
@@ -16,11 +16,17 @@ declare global {
 
 if (!Array.prototype.associateBy) {
   Object.defineProperty(Array.prototype, 'associateBy', {
-    value: function associateBy<T>(this: T[], cb: (value: T) => PropertyKey): Record<PropertyKey, T> {
-      return this.reduce((acc, curr) => {
-        acc[cb(curr)] = curr;
-        return acc;
-      }, {} as Record<PropertyKey, T>);
-    }
+    value: function associateBy<T>(
+      this: T[],
+      cb: (value: T) => PropertyKey,
+    ): Record<PropertyKey, T> {
+      return this.reduce(
+        (acc, curr) => {
+          acc[cb(curr)] = curr;
+          return acc;
+        },
+        {} as Record<PropertyKey, T>,
+      );
+    },
   });
 }

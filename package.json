@@ -1,13 +1,12 @@
 {
   "name": "ts-functional-extensions",
-  "version": "0.0.11",
+  "version": "0.0.12",
   "description": "Various type-safe functional extensions to JavaScript's collections.",
   "main": "./dist/index.js",
   "module": "./dist/index.es.js",
   "types": "./dist/index.d.ts",
-  "files": [
-    "dist/"
-  ],
+  "sideEffects": false,
+  "files": ["dist/"],
   "type": "module",
   "scripts": {
     "build": "npm run clean && ./node_modules/.bin/rollup -c",

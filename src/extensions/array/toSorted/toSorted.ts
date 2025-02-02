@@ -1,4 +1,4 @@
-export {}
+export {};
 
 declare global {
   interface Array<T> {
@@ -20,6 +20,6 @@ if (!Array.prototype.toSorted) {
   Object.defineProperty(Array.prototype, 'toSorted', {
     value: function toSorted<T>(this: T[], cb?: (a: T, b: T) => number): T[] {
       return [...this].sort(cb);
-    }
+    },
   });
 }

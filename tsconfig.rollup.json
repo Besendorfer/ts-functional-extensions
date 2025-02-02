@@ -5,6 +5,6 @@
     "outDir": ".",
     "module": "esnext",
     "moduleResolution": "Node",
-    "target": "es5",
+    "target": "es5"
   }
 }

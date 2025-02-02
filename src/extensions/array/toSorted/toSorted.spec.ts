@@ -43,11 +43,11 @@ describe('toSorted', () => {
   });
 
   it('should sort the values in an array with NaN', () => {
-    const arr = [3, NaN, 1];
+    const arr = [3, Number.NaN, 1];
 
     const result = arr.toSorted();
 
-    expect(result).toEqual([1, 3, NaN]);
+    expect(result).toEqual([1, 3, Number.NaN]);
   });
 
   it('should sort the values in an array, then allow the array to be chained', () => {

@@ -16,15 +16,19 @@ declare global {
 
 if (!Array.prototype.pushSorted) {
   Object.defineProperty(Array.prototype, 'pushSorted', {
-    value: function pushSorted<T>(this: T[], value: T, compareFn?: (a: T, b: T) => number): number {
+    value: function pushSorted<T>(
+      this: T[],
+      value: T,
+      compareFn?: (a: T, b: T) => number,
+    ): number {
       if (compareFn == null) {
         // emulate the default Array.sort() comparator
-        compareFn = function(a: T, b: T) {
+        compareFn = (a: T, b: T) => {
           // @ts-ignore - allow coercing to string
           if (typeof a !== 'string') a = String(a);
           // @ts-ignore - allow coercing to string
           if (typeof b !== 'string') b = String(b);
-          return (a > b ? 1 : (a < b ? -1 : 0));
+          return a > b ? 1 : a < b ? -1 : 0;
         };
       }
 
@@ -45,6 +49,6 @@ if (!Array.prototype.pushSorted) {
       this.splice(index, 0, value);
 
       return index;
-    }
+    },
   });
 }

@@ -24,6 +24,6 @@ if (!Array.prototype.sum) {
         if (Number.isNaN(Number(it))) return acc;
         return acc + Number(it);
       }, 0);
-    }
+    },
   });
 }

@@ -16,9 +16,12 @@ declare global {
 
 if (!Array.prototype.any) {
   Object.defineProperty(Array.prototype, 'any', {
-    value: function any<T>(this: T[], cb?: (value: T, index: number, array: T[]) => unknown): boolean {
+    value: function any<T>(
+      this: T[],
+      cb?: (value: T, index: number, array: T[]) => unknown,
+    ): boolean {
       if (!cb) return this.length > 0;
-      else return this.some(cb);
-    }
+      return this.some(cb);
+    },
   });
 }

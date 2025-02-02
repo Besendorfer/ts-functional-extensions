@@ -1,4 +1,4 @@
-export {}
+export {};
 
 declare global {
   interface Array<T> {
@@ -22,6 +22,6 @@ if (!Array.prototype.zip) {
   Object.defineProperty(Array.prototype, 'zip', {
     value: function zip<T, U>(this: T[], other: U[]): Array<[T, U]> {
       return this.map((it, index) => [it, other[index]]);
-    }
+    },
   });
 }

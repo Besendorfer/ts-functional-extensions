@@ -42,7 +42,7 @@ describe('sum', () => {
   });
 
   it('should sum the values in an array with NaN', () => {
-    const arr = [1, NaN, 3];
+    const arr = [1, Number.NaN, 3];
 
     const result = arr.sum();
 

@@ -1,4 +1,4 @@
-export {}
+export {};
 
 declare global {
   interface Array<T> {
@@ -16,9 +16,12 @@ declare global {
 
 if (!Array.prototype.none) {
   Object.defineProperty(Array.prototype, 'none', {
-    value: function none<T>(this: T[], cb?: (value: T, index: number, array: T[]) => unknown): boolean {
+    value: function none<T>(
+      this: T[],
+      cb?: (value: T, index: number, array: T[]) => unknown,
+    ): boolean {
       if (!cb) return this.length === 0;
-      else return !this.some(cb);
-    }
+      return !this.some(cb);
+    },
   });
 }
